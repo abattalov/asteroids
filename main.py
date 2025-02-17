@@ -8,6 +8,9 @@ def main():
     print(f"Screen height: {c.SCREEN_HEIGHT}")
 
     screen = pygame.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = clock.tick(60)/1000
+    player = Player(c.SCREEN_WIDTH/2, c.SCREEN_HEIGHT/2, c.PLAYER_RAIDUS)
 
     while True:
         for event in pygame.event.get():
@@ -15,8 +18,8 @@ def main():
                 return
         
         screen.fill((0,0,0))
-        player = Player(c.SCREEN_WIDTH/2, c.SCREEN_HEIGHT/2, c.PLAYER_RAIDUS)
         player.draw(screen)
+        player.update(dt)
 
 
 
