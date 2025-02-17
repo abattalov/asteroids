@@ -1,5 +1,6 @@
 import pygame
 import constants as c
+from player import Player
 
 def main():
     print("Starting asteroids!")
@@ -14,6 +15,13 @@ def main():
                 return
         
         screen.fill((0,0,0))
+        player = Player(c.SCREEN_WIDTH/2, c.SCREEN_HEIGHT/2, c.PLAYER_RAIDUS)
+        player.draw(screen)
+
+
+
+
+
         pygame.display.flip()
 
 if __name__ == "__main__":
